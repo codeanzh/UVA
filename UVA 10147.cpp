@@ -1,7 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
-#include <string>
 #include <algorithm>
 #include <math.h>
 
@@ -9,57 +7,13 @@ using namespace std;
 
 #define ll long long int
 #define VEC vector<ll>
-#define VECV vector<VEC>
-#define VECS vector<string>
 #define PAIR pair<ll, ll>
 #define VECP vector<PAIR>
 #define V(a) vector<a>
 #define mp(a, b) make_pair(a, b)
 #define pb(a) push_back(a)
 #define rep(i, st, n) for (ll i = st; i < n; i++)
-#define repr(i, st, n) for (ll i = st; i >= n; i--)
-#define fora(i, a) for(auto i: a)
 #define wtc() ll tc; cin >> tc; ll test_case = tc; while (tc--)
-
-struct hash_pair 
-{ 
-    template <class T1, class T2> 
-    size_t operator()(const pair<T1, T2>& p) const
-    { 
-        auto hash1 = hash<T1>{}(p.first);
-        auto hash2 = hash<T2>{}(p.second); 
-        return hash1 ^ hash2; 
-    } 
-};
-
-#define PAIR_MAP(a) unordered_map<PAIR, a, hash_pair>
-
-ll gcd(ll a, ll b)
-{
-  if (b == 0)
-    return a;
-  return gcd(b, a % b);
-}
-
-ll lcm(ll a, ll b) { return (a / gcd(a, b)) * b; }
-
-ll mod_pow(ll x, ll y, ll m)
-{
-    if (y == 0)
-        return 1;
-    else if (y % 2 == 0)
-    {
-        ll pow2 = mod_pow(x, y / 2, m);
-
-        return (pow2 * pow2) % m;
-    }
-    else
-    {
-        ll pow2 = mod_pow(x, y / 2, m);
-
-        return (((pow2 * pow2) % m) * x) % m;
-    }
-}
 
 class DisjointSet
 {
@@ -189,12 +143,6 @@ int main()
 {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-
-    #ifndef ONLINE_JUDGE
-        freopen("in.txt", "r", stdin);
-        freopen("out.txt", "w", stdout);
-
-    #endif
 
     solve();
 
