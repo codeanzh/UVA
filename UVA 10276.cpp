@@ -8,7 +8,7 @@ using namespace std;
 #define rep(i, st, n) for (ll i = st; i < n; i++)
 #define wtc() ll tc; cin >> tc; while (tc--)
 
-bool check_prime(ll n)
+bool check_sqrt(ll n)
 {
     ll i = 1;
     for (; i * i <= n; i++);
@@ -30,7 +30,7 @@ void solve()
             bool flag = true;
 
             rep (i, 0, n)
-                if (pegs[i] == 0 || check_prime(pegs[i] + ans))
+                if (pegs[i] == 0 || check_sqrt(pegs[i] + ans))
                 {
                     pegs[i] = ans++;
                     flag = false;
