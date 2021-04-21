@@ -62,14 +62,7 @@ void solve()
                 break;
         }
 
-        dfs_color(maze, mp(start.first - 1, start.second));
-        dfs_color(maze, mp(start.first - 1, start.second - 1));
-        dfs_color(maze, mp(start.first - 1, start.second + 1));
-        dfs_color(maze, mp(start.first, start.second - 1));
-        dfs_color(maze, mp(start.first, start.second + 1));
-        dfs_color(maze, mp(start.first + 1, start.second - 1));
-        dfs_color(maze, mp(start.first + 1, start.second));
-        dfs_color(maze, mp(start.first + 1, start.second + 1));
+        dfs_color(maze, mp(start.first, start.second));
 
         rep (i, 0, maze.size())
             cout << maze[i] + "\n";
