@@ -8,7 +8,7 @@ using namespace std;
 #define V(a) vector<a>
 #define rep(i, st, n) for (ll i = st; i < n; i++)
 
-bool pos(ll sum, VEC &arr, V(bool) choosen)
+bool pos(ll sum, VEC &arr, V(bool) &choosen)
 {
     bool flag = true;
 
