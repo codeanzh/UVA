@@ -12,12 +12,12 @@ using namespace std;
 
 V(V(bool)) DP;
 
-void divisible(VEC &arr, ll i, ll k, ll sum)
+void divisible(VEC &arr, ll i, ll k, ll prev)
 {
     if (i == arr.size())
         return;
 
-    ll add = (((sum + arr[i]) % k) + k) % k, sub = (((sum - arr[i]) % k) + k) % k;
+    ll add = (((prev + arr[i]) % k) + k) % k, sub = (((prev - arr[i]) % k) + k) % k;
     
     if (!DP[i][add])
     {
